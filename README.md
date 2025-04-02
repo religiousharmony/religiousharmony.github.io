@@ -1,25 +1,25 @@
 # religiousharmony.github.io
 
-منصة تعليم الأديان السماوية
+Religious Education Platform
 
-- **التوراة**  
-- **الإنجيل**  
-- **القرآن**  
+- **Torah**  
+- **Bible**  
+- **Quran**  
 
-بجميع لغات العالم.
+In all world languages.
 
-تهدف المنصة إلى تعزيز التفاهم بين الأديان السماوية من خلال:  
-- التطوع لتعليمها ونشر المعرفة.  
-- توفير موارد تعليمية شاملة ومجانية.  
-- مشاركة الأفراد الذين يبحثون عن فهم أعمق لدينهم أو الأديان الأخرى.  
-- بناء مجتمع عالمي يركز على الاحترام المتبادل والتعاون.  
+The platform aims to promote understanding between Abrahamic religions through:  
+- Volunteering to teach and spread knowledge.  
+- Providing comprehensive and free educational resources.  
+- Engaging individuals seeking a deeper understanding of their own or other religions.  
+- Building a global community focused on mutual respect and collaboration.  
 
-نسعى لنشر المعرفة، تعزيز التفاهم بين الأديان، وبناء جسور من الاحترام المتبادل.
+We strive to spread knowledge, promote understanding between religions, and build bridges of mutual respect.
 
-### الاستدامة والتطوع
-لضمان استمرارية العمل وتحقيق أهداف المنصة، نعتمد على:  
-- **التطوع**: ندعو الأفراد للمساهمة بوقتهم وخبراتهم.  
+### Sustainability and Volunteering
+To ensure the continuity of work and achieve the platform's goals, we rely on:  
+- **Volunteering**: We invite individuals to contribute their time and expertise.  
 
-نسأل الله أن يرزقنا الإخلاص في العمل وأن يجعل هذا المشروع في ميزان حسنات الجميع.
+May God grant us sincerity in our work and make this project a blessing for everyone involved.
 
 

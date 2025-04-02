@@ -22,6 +22,26 @@
         <section id="login-islam">
             <h2>Login - Islam</h2>
             <p>Access resources and teachings related to Islam.</p>
+            <div id="quran-section">
+                <h3>القرآن الكريم</h3>
+                <p>Explore the Quran with tafsir and translations.</p>
+                <a href="https://quran.com" target="_blank">Quran.com</a>
+            </div>
+            <div id="hadith-section">
+                <h3>الحديث</h3>
+                <p>Explore authentic Hadith collections and explanations.</p>
+                <a href="https://sunnah.com" target="_blank">Sunnah.com</a>
+            </div>
+            <div id="seerah-section">
+                <h3>السيرة النبوية</h3>
+                <p>Learn about the life of Prophet Muhammad (PBUH).</p>
+                <a href="https://www.seerahbase.com" target="_blank">Seerah Base</a>
+            </div>
+            <div id="fiqh-section">
+                <h3>الفقه</h3>
+                <p>Understand Islamic jurisprudence and rulings.</p>
+                <a href="https://www.al-islam.org" target="_blank">Al-Islam.org</a>
+            </div>
         </section>
         <section id="login-christianity">
             <h2>Login - Christianity</h2>
@@ -31,18 +51,18 @@
                 <ul>
                     <li>
                         <h4>Catholic</h4>
-                        <p>Explore Catholic teachings and resources.</p>
-                        <a href="https://catholic-resources.example.com" target="_blank">Catholic Resources</a>
+                        <p>The Catholic Church is the largest Christian church, emphasizing tradition and the sacraments.</p>
+                        <a href="https://opensource-catholic-resources.example.com" target="_blank">Open Source Catholic Resources</a>
                     </li>
                     <li>
                         <h4>Orthodox</h4>
-                        <p>Explore Orthodox teachings and resources.</p>
-                        <a href="https://orthodox-resources.example.com" target="_blank">Orthodox Resources</a>
+                        <p>The Orthodox Church focuses on preserving the original teachings and liturgical traditions of Christianity.</p>
+                        <a href="https://opensource-orthodox-resources.example.com" target="_blank">Open Source Orthodox Resources</a>
                     </li>
                     <li>
                         <h4>Protestant</h4>
-                        <p>Explore Protestant teachings and resources.</p>
-                        <a href="https://protestant-resources.example.com" target="_blank">Protestant Resources</a>
+                        <p>Protestantism includes various denominations emphasizing scripture and individual faith.</p>
+                        <a href="https://opensource-protestant-resources.example.com" target="_blank">Open Source Protestant Resources</a>
                     </li>
                 </ul>
             </div>
@@ -132,6 +152,11 @@
             </div>
             <button id="activate-judaism-sections">Activate Judaism Sections</button>
         </section>
+        <section id="judaism-section">
+            <h2>الديانة اليهودية</h2>
+            <p>تعرف على المزيد حول التقاليد اليهودية والتقويم اليهودي.</p>
+            <div id="jewish-calendar"></div>
+        </section>
         <section id="about">
             <h2>About the Platform</h2>
             <p>The platform aims to promote understanding between Abrahamic religions by providing comprehensive and free educational resources.</p>
@@ -156,6 +181,12 @@
             script.src = 'https://example.com/judaism-library.js';
             document.body.appendChild(script);
         });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hebcal/2.0.1/hebcal.min.js"></script>
+    <script>
+        // مثال لاستخدام مكتبة hebcal
+        const today = new Hebcal.HDate();
+        document.getElementById('jewish-calendar').innerText = `التاريخ اليهودي اليوم: ${today.toString()}`;
     </script>
 </body>
 </html>

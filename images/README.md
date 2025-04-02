@@ -1,6 +1,7 @@
-# Images Folder
+# Images Directory
 
-هذا المجلد مخصص لتخزين الصور المستخدمة في المشروع. يرجى إضافة الصور بالتسلسل:
-- `1.png`: صورة الخلفية.
-- `2.png`: الصورة الثانية.
-- وهكذا...
+This directory contains images used across the platform. You can add images here to support the newly added Christianity sections or any other sections.
+
+## Judaism Section
+
+You can also add images here to support the newly added Judaism sections or any related content. Ensure the images are relevant to Torah sections or other Judaism-related resources.
