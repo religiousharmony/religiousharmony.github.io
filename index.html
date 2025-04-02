@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
-            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #dfe9f3);
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            color: #333;
         }
         header {
-            background-color: #333;
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
             color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: bold;
         }
         nav ul {
             list-style: none;
@@ -32,34 +32,40 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
-            padding: 8px 15px;
+            font-size: 1.1em;
+            padding: 10px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
         }
         nav ul li a:hover {
-            background-color: #4CAF50;
+            background-color: white;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
         }
         .section-button {
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
-            background-color: #007BFF;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-size: 1.2em;
+            font-weight: bold;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .section-button:hover {
-            background-color: #0056b3;
+            background: linear-gradient(90deg, #feb47b, #ff7e5f);
         }
         .login-form {
             max-width: 400px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #fdfbfb, #ebedee);
             border-radius: 10px;
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .login-form input {
@@ -72,30 +78,64 @@
         .login-form button {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 1.2em;
+            font-weight: bold;
             cursor: pointer;
         }
         .login-form button:hover {
-            background-color: #218838;
+            background: linear-gradient(90deg, #2196F3, #4CAF50);
         }
         footer {
-            background-color: #333;
+            background: linear-gradient(90deg, #2196F3, #4CAF50);
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            font-size: 1.1em;
         }
         footer .social-icons a {
             color: white;
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s;
+            margin: 0 15px;
+            font-size: 1.8em;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
         footer .social-icons a:hover {
-            color: #4CAF50;
+            color: #ffeb3b;
+            transform: scale(1.2);
+        }
+        .section {
+            margin-bottom: 20px; /* تقليل المسافة بين الأقسام */
+        }
+        .dashboard-actions button {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .dashboard-actions button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #feb47b, #ff7e5f);
+        }
+        .dashboard-actions button:active {
+            transform: scale(0.95);
+        }
+        .social-icons a {
+            border-radius: 50%;
+            padding: 10px;
+            background: white;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .social-icons a:hover {
+            background: #4CAF50;
+            color: white;
         }
     </style>
 </head>
@@ -121,17 +161,17 @@
                 <button>Login</button>
             </div>
         </section>
-        <section id="islam">
+        <section id="islam" class="section islam">
             <h2>الدين الإسلامي</h2>
             <p>معلومات عن الدين الإسلامي.</p>
             <a class="section-button" href="https://quran.com" target="_blank">Explore Quran</a>
         </section>
-        <section id="christianity">
+        <section id="christianity" class="section christianity">
             <h2>الدين المسيحي</h2>
             <p>معلومات عن الدين المسيحي.</p>
             <a class="section-button" href="https://www.biblegateway.com/" target="_blank">Explore Bible</a>
         </section>
-        <section id="judaism">
+        <section id="judaism" class="section judaism">
             <h2>الدين اليهودي</h2>
             <p>معلومات عن الدين اليهودي.</p>
             <a class="section-button" href="https://www.sefaria.org/" target="_blank">Explore Torah</a>
@@ -282,10 +322,35 @@
             <h2>Resources</h2>
             <p>Explore religious texts and educational materials in multiple languages.</p>
         </section>
+        <section id="blogs">
+            <h2>المدونات</h2>
+            <p>اكتشف مقالات ومدونات حول الأديان والثقافات المختلفة.</p>
+            <a class="section-button" href="blogs.html">استكشاف المدونات</a>
+        </section>
         <section id="debates">
-            <h2>Religious Debates</h2>
-            <p>Join live debates and discussions about religious topics.</p>
-            <a class="section-button" href="debates.html">Join Debates</a>
+            <h2>المناظرات الدينية</h2>
+            <p>اختر نوع النشاط الذي ترغب في المشاركة فيه:</p>
+            <div class="debate-options">
+                <button id="education-button">تعليم</button>
+                <button id="memorization-button">تحفيظ</button>
+                <button id="chat-button">دردشات</button>
+                <button id="schedule-meeting-button">نظام اجتماعات</button>
+            </div>
+            <div id="meeting-scheduler" style="display: none;">
+                <h3>جدولة اجتماع</h3>
+                <form id="meeting-form">
+                    <label for="meeting-date">التاريخ:</label>
+                    <input type="date" id="meeting-date" required>
+                    <label for="meeting-time">الوقت:</label>
+                    <input type="time" id="meeting-time" required>
+                    <label for="meeting-type">نوع الاجتماع:</label>
+                    <select id="meeting-type" required>
+                        <option value="debate">مناظرة</option>
+                        <option value="education">تعليم</option>
+                    </select>
+                    <button type="submit">جدولة</button>
+                </form>
+            </div>
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
@@ -330,7 +395,7 @@
             <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
             <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="text-align: center; font-size: 1.5em; font-weight: bold; color: #4CAF50;">🌍 ONE WORLD 🌎</p>
+        <p style="text-align: center; font-size: 1.5em; font-weight: bold; color: #ffeb3b;">🌍 ONE WORLD 🌎</p>
     </footer>
     <script>
         document.getElementById('activate-judaism-sections').addEventListener('click', () => {
@@ -361,6 +426,20 @@
             const email = e.target.querySelector('input[type="email"]').value;
             const username = e.target.querySelector('input[type="text"]').value;
             alert(`تم تسجيل المستخدم: ${username} (${email})`);
+            // إرسال البيانات إلى الخادم
+        });
+
+        document.getElementById('schedule-meeting-button').addEventListener('click', () => {
+            const scheduler = document.getElementById('meeting-scheduler');
+            scheduler.style.display = scheduler.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('meeting-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const date = document.getElementById('meeting-date').value;
+            const time = document.getElementById('meeting-time').value;
+            const type = document.getElementById('meeting-type').value;
+            alert(`تم جدولة اجتماع ${type} في ${date} الساعة ${time}`);
             // إرسال البيانات إلى الخادم
         });
     </script>

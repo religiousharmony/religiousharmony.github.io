@@ -1,0 +1,36 @@
+<!-- ...existing code... -->
+<script>
+    // تفعيل مكتبات مختلفة لكل قسم
+    const libraries = {
+        islam: "https://example.com/safari-library.js",
+        christianity: "https://example.com/bible-library.js",
+        judaism: "https://example.com/torah-library.js"
+    };
+
+    function loadLibrary(section) {
+        const script = document.createElement('script');
+        script.src = libraries[section];
+        document.head.appendChild(script);
+    }
+
+    // مثال: تحميل مكتبة الإسلام
+    loadLibrary('islam');
+</script>
+
+<!-- تعديل صفحة تسجيل الدخول -->
+<form id="registerForm">
+    <!-- ...existing code... -->
+    <button type="submit">تسجيل</button>
+</form>
+<div id="userMessage"></div>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const userData = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value
+        };
+        document.getElementById('userMessage').innerText = `مرحبًا ${userData.username}, تم تسجيلك بنجاح!`;
+    });
+</script>
+<!-- ...existing code... -->
