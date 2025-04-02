@@ -5,20 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Religious Education Platform</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 2em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #4CAF50;
+        }
+        .section-button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        .section-button:hover {
+            background-color: #0056b3;
+        }
+        .login-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+        footer .social-icons a:hover {
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Religious Education Platform</h1>
         <nav>
             <ul>
-                <li><a href="#login-islam">Islam</a></li>
-                <li><a href="#login-christianity">Christianity</a></li>
-                <li><a href="#login-judaism">Judaism</a></li>
+                <li><a href="#islam">Islam</a></li>
+                <li><a href="#christianity">Christianity</a></li>
+                <li><a href="#judaism">Judaism</a></li>
+                <li><a href="#debates">Debates</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <section id="login">
+            <div class="login-form">
+                <h2>Login</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button>Login</button>
+            </div>
+        </section>
+        <section id="islam">
+            <h2>الدين الإسلامي</h2>
+            <p>معلومات عن الدين الإسلامي.</p>
+            <a class="section-button" href="https://quran.com" target="_blank">Explore Quran</a>
+        </section>
+        <section id="christianity">
+            <h2>الدين المسيحي</h2>
+            <p>معلومات عن الدين المسيحي.</p>
+            <a class="section-button" href="https://www.biblegateway.com/" target="_blank">Explore Bible</a>
+        </section>
+        <section id="judaism">
+            <h2>الدين اليهودي</h2>
+            <p>معلومات عن الدين اليهودي.</p>
+            <a class="section-button" href="https://www.sefaria.org/" target="_blank">Explore Torah</a>
+        </section>
         <section id="login-islam">
             <h2>Login - Islam</h2>
             <p>Access resources and teachings related to Islam.</p>
@@ -165,32 +282,54 @@
             <h2>Resources</h2>
             <p>Explore religious texts and educational materials in multiple languages.</p>
         </section>
+        <section id="debates">
+            <h2>Religious Debates</h2>
+            <p>Join live debates and discussions about religious topics.</p>
+            <a class="section-button" href="debates.html">Join Debates</a>
+        </section>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>For any inquiries or suggestions, please contact us via email.</p>
+            <p>For inquiries or suggestions, reach us on:</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </section>
-        <section id="islam">
-            <h2>الدين الإسلامي</h2>
-            <p>معلومات عن الدين الإسلامي.</p>
-            <!-- القسم مفعل بالفعل -->
-        </section>
-
-        <section id="christianity">
-            <h2>الدين المسيحي</h2>
-            <p>معلومات عن الدين المسيحي.</p>
-            <a href="https://www.biblegateway.com/" target="_blank">Bible Gateway - مصدر مفتوح للكتاب المقدس</a>
-            <a href="https://www.ccel.org/" target="_blank">Christian Classics Ethereal Library - مكتبة مفتوحة المصدر</a>
-        </section>
-
-        <section id="judaism">
-            <h2>الدين اليهودي</h2>
-            <p>معلومات عن الدين اليهودي.</p>
-            <a href="https://www.sefaria.org/" target="_blank">Sefaria - مكتبة مفتوحة المصدر للنصوص اليهودية</a>
-            <a href="https://www.myjewishlearning.com/" target="_blank">My Jewish Learning - مصدر تعليمي مفتوح</a>
+        <section id="admin-dashboard">
+            <h2>لوحة التحكم</h2>
+            <p>إدارة الموقع، مراجعة طلبات التطوع، وتسجيل المستخدمين.</p>
+            <div class="dashboard-actions">
+                <button id="view-volunteer-requests">عرض طلبات التطوع</button>
+                <button id="manage-users">إدارة المستخدمين</button>
+            </div>
+            <div id="volunteer-requests" style="display: none;">
+                <h3>طلبات التطوع</h3>
+                <ul id="requests-list">
+                    <!-- سيتم ملء الطلبات ديناميكيًا -->
+                </ul>
+            </div>
+            <div id="user-registration">
+                <h3>تسجيل مستخدم جديد</h3>
+                <form id="registration-form">
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <input type="text" placeholder="اسم المستخدم" required>
+                    <button type="submit">تسجيل</button>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Religious Education Platform. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
         <p style="text-align: center; font-size: 1.5em; font-weight: bold; color: #4CAF50;">🌍 ONE WORLD 🌎</p>
     </footer>
     <script>
@@ -200,6 +339,29 @@
             const script = document.createElement('script');
             script.src = 'https://example.com/judaism-library.js';
             document.body.appendChild(script);
+        });
+
+        // Example: Add interactivity for debates
+        document.querySelector('.section-button[href="debates.html"]').addEventListener('click', () => {
+            alert('Redirecting to debates section...');
+        });
+
+        // عرض طلبات التطوع
+        document.getElementById('view-volunteer-requests').addEventListener('click', () => {
+            const requestsSection = document.getElementById('volunteer-requests');
+            requestsSection.style.display = requestsSection.style.display === 'none' ? 'block' : 'none';
+            // مثال: جلب الطلبات من الخادم
+            const requestsList = document.getElementById('requests-list');
+            requestsList.innerHTML = '<li>طلب تطوع 1</li><li>طلب تطوع 2</li>';
+        });
+
+        // تسجيل المستخدم
+        document.getElementById('registration-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const username = e.target.querySelector('input[type="text"]').value;
+            alert(`تم تسجيل المستخدم: ${username} (${email})`);
+            // إرسال البيانات إلى الخادم
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hebcal/2.0.1/hebcal.min.js"></script>
