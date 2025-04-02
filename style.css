@@ -1,0 +1,8 @@
+body {
+    /* ...existing code... */
+    background-image: url('logo.png');
+    background-size: cover; /* لجعل الصورة تغطي الصفحة بالكامل */
+    background-repeat: no-repeat; /* لمنع تكرار الصورة */
+    background-position: center; /* لجعل الصورة تتمركز في الصفحة */
+    /* ...existing code... */
+}
