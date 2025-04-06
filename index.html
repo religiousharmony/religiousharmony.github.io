@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            background: url('image/background.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            color: #444;
+            color: #f5f5f5;
         }
         header {
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            color: white;
+            background: linear-gradient(90deg, #1e1e1e, #333333);
+            color: #f5f5f5;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         header h1 {
             font-size: 3em;
             font-weight: bold;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
         }
         nav ul {
             list-style: none;
@@ -31,7 +32,7 @@
             gap: 15px;
         }
         nav ul li a {
-            color: white;
+            color: #f5f5f5;
             text-decoration: none;
             font-size: 1.1em;
             padding: 8px 16px;
@@ -39,47 +40,50 @@
             transition: background-color 0.3s, transform 0.3s;
         }
         nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
             transform: scale(1.1);
         }
         .section-button {
             display: inline-block;
             margin: 15px 0;
             padding: 12px 30px;
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
-            color: white;
+            background: linear-gradient(90deg, #444444, #666666);
+            color: #f5f5f5;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.2em;
             font-weight: bold;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         .section-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
         }
         .login-form {
             max-width: 400px;
             margin: 30px auto;
             padding: 25px;
-            background: white;
+            background: #2c2c2c;
             border-radius: 15px;
-            border: 1px solid #ddd;
+            border: 1px solid #444;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: #f5f5f5;
         }
         .login-form input {
             width: 100%;
             padding: 15px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            background: #3e3e3e;
+            color: #f5f5f5;
+            border: 1px solid #555;
             border-radius: 10px;
         }
         .login-form button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            color: white;
+            background: linear-gradient(90deg, #444444, #666666);
+            color: #f5f5f5;
             border: none;
             border-radius: 10px;
             font-size: 1.2em;
@@ -92,22 +96,22 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background: linear-gradient(90deg, #8e44ad, #3498db); /* زخارف إيمانية */
-            color: white;
+            background: linear-gradient(90deg, #1e1e1e, #333333);
+            color: #f5f5f5;
             text-align: center;
             padding: 25px 0;
             font-size: 1.2em;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
         footer .social-icons a {
-            color: white;
+            color: #f5f5f5;
             margin: 0 10px;
-            font-size: 1.8em; /* تكبير الأيقونات */
+            font-size: 1.8em;
             transition: transform 0.3s, color 0.3s;
         }
         footer .social-icons a:hover {
-            color: #f1c40f; /* لون زاهي */
-            transform: scale(1.3); /* تكبير عند التمرير */
+            color: #1abc9c;
+            transform: scale(1.3);
         }
         .section {
             margin-bottom: 30px;
@@ -156,25 +160,6 @@
         </nav>
     </header>
     <main>
-        <section id="login">
-            <div class="login-form">
-                <h2>Login</h2>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
-                <button>Login</button>
-            </div>
-        </section>
-        <section id="register">
-            <div class="login-form">
-                <h2>Register</h2>
-                <form id="registration-form">
-                    <input type="text" id="register-username" placeholder="Username" required>
-                    <input type="email" id="register-email" placeholder="Email" required>
-                    <input type="password" id="register-password" placeholder="Password" required>
-                    <button type="submit">Register</button>
-                </form>
-            </div>
-        </section>
         <section id="islam" class="section islam">
             <h2>Islam</h2>
             <p>Information about Islam.</p>
@@ -269,8 +254,11 @@
             <p>Join our mission to educate, preserve, and share knowledge globally. Choose how you want to contribute:</p>
             <div class="contribution-options">
                 <a class="section-button" href="education.html" target="_blank">Education</a>
+                <p>Contribute by sharing educational resources and knowledge.</p>
                 <a class="section-button" href="memorization.html" target="_blank">Memorization</a>
+                <p>Help preserve religious texts and traditions through memorization.</p>
                 <a class="section-button" href="activities.html" target="_blank">Activities</a>
+                <p>Participate in activities that promote interfaith harmony and understanding.</p>
             </div>
         </section>
     </main>
@@ -401,10 +389,6 @@
         });
 
         // تفعيل رابط المناظرات
-        document.querySelector('.section-button[href="debates.html"]').addEventListener('click', () => {
-            alert('Redirecting to debates section...');
-            window.location.href = 'debates.html';
-        });
 
         document.getElementById('blog-form').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -509,6 +493,81 @@
             } else {
                 alert(`Logged in Successfully!\nUsername: ${username}`);
             }
+        });
+
+        // تحسين وظيفة تسجيل الدخول
+        document.getElementById('auth-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('auth-username').value;
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+
+            if (email) {
+                alert(`Registered Successfully!\nUsername: ${username}\nEmail: ${email}`);
+                isLoggedIn = true; // تسجيل الدخول تلقائيًا بعد التسجيل
+            } else {
+                alert(`Logged in Successfully!\nUsername: ${username}`);
+                isLoggedIn = true;
+            }
+        });
+
+        // تحسين وظيفة إعادة التوجيه
+        function redirectToPageOrLogin(targetPage) {
+            if (isLoggedIn) {
+                window.location.href = targetPage;
+            } else {
+                alert('You need to log in first!');
+                window.location.href = '#login'; // توجيه إلى قسم تسجيل الدخول
+            }
+        }
+
+        // تعديل الروابط لتفعيل التوجيه
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = link.getAttribute('href');
+                redirectToPageOrLogin(targetPage);
+            });
+        });
+
+        // تعديل أزرار الأقسام
+        document.querySelectorAll('.section-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = button.getAttribute('href');
+                redirectToPageOrLogin(targetPage);
+            });
+        });
+
+        // تحسين عرض لوحة التحكم
+        const adminDashboard = document.getElementById('admin-dashboard');
+        if (adminDashboard) {
+            adminDashboard.style.display = isLoggedIn ? 'block' : 'none';
+        }
+
+        // تحسين عرض المدونات
+        document.getElementById('blog-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('blog-title').value;
+            const content = document.getElementById('blog-content').value;
+
+            const blogEntry = document.createElement('li');
+            blogEntry.innerHTML = `<h4>${title}</h4><p>${content}</p>`;
+            document.getElementById('blogs-container').appendChild(blogEntry);
+
+            document.getElementById('blog-title').value = '';
+            document.getElementById('blog-content').value = '';
+
+            alert('Blog saved successfully!');
+        });
+
+        // تحسين عرض الاجتماعات
+        document.getElementById('meeting-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const date = document.getElementById('meeting-date').value;
+            const time = document.getElementById('meeting-time').value;
+            const type = document.getElementById('meeting-type').value;
+            alert(`Meeting scheduled: ${type} on ${date} at ${time}`);
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hebcal/2.0.1/hebcal.min.js"></script>
