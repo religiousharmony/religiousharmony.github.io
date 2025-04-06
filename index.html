@@ -8,120 +8,123 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(to bottom, #ffffff, #dfe9f3);
-            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #444;
         }
         header {
-            background: linear-gradient(90deg, #4CAF50, #2196F3);
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
             color: white;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 1.1em;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s, transform 0.3s;
         }
         nav ul li a:hover {
-            background-color: white;
-            color: #4CAF50;
-            border: 2px solid #4CAF50;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
         }
         .section-button {
             display: inline-block;
-            margin: 10px 0;
-            padding: 10px 20px;
+            margin: 15px 0;
+            padding: 12px 30px;
             background: linear-gradient(90deg, #ff7e5f, #feb47b);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-size: 1.2em;
             font-weight: bold;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .section-button:hover {
-            background: linear-gradient(90deg, #feb47b, #ff7e5f);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         .login-form {
             max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #fdfbfb, #ebedee);
-            border-radius: 10px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
             border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .login-form input {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px;
         }
         .login-form button {
             width: 100%;
-            padding: 10px;
-            background: linear-gradient(90deg, #4CAF50, #2196F3);
+            padding: 15px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .login-form button:hover {
-            background: linear-gradient(90deg, #2196F3, #4CAF50);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background: linear-gradient(90deg, #2196F3, #4CAF50);
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            font-size: 1.1em;
+            padding: 25px 0;
+            font-size: 1.2em;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
         }
         footer .social-icons a {
             color: white;
-            margin: 0 15px;
-            font-size: 1.8em;
-            transition: transform 0.3s ease, color 0.3s ease;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: transform 0.3s, color 0.3s;
         }
         footer .social-icons a:hover {
             color: #ffeb3b;
             transform: scale(1.2);
         }
         .section {
-            margin-bottom: 20px; /* تقليل المسافة بين الأقسام */
+            margin-bottom: 30px;
         }
         .dashboard-actions button {
             background: linear-gradient(90deg, #ff7e5f, #feb47b);
             color: white;
             font-weight: bold;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 30px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .dashboard-actions button:hover {
-            transform: scale(1.1);
-            background: linear-gradient(90deg, #feb47b, #ff7e5f);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
         .dashboard-actions button:active {
             transform: scale(0.95);
@@ -162,157 +165,19 @@
             </div>
         </section>
         <section id="islam" class="section islam">
-            <h2>الدين الإسلامي</h2>
-            <p>معلومات عن الدين الإسلامي.</p>
+            <h2>Islam</h2>
+            <p>Information about Islam.</p>
             <a class="section-button" href="https://quran.com" target="_blank">Explore Quran</a>
         </section>
         <section id="christianity" class="section christianity">
-            <h2>الدين المسيحي</h2>
-            <p>معلومات عن الدين المسيحي.</p>
+            <h2>Christianity</h2>
+            <p>Information about Christianity.</p>
             <a class="section-button" href="https://www.biblegateway.com/" target="_blank">Explore Bible</a>
         </section>
         <section id="judaism" class="section judaism">
-            <h2>الدين اليهودي</h2>
-            <p>معلومات عن الدين اليهودي.</p>
+            <h2>Judaism</h2>
+            <p>Information about Judaism.</p>
             <a class="section-button" href="https://www.sefaria.org/" target="_blank">Explore Torah</a>
-        </section>
-        <section id="login-islam">
-            <h2>Login - Islam</h2>
-            <p>Access resources and teachings related to Islam.</p>
-            <div id="quran-section">
-                <h3>القرآن الكريم</h3>
-                <p>Explore the Quran with tafsir and translations.</p>
-                <a href="https://quran.com" target="_blank">Quran.com</a>
-            </div>
-            <div id="hadith-section">
-                <h3>الحديث</h3>
-                <p>Explore authentic Hadith collections and explanations.</p>
-                <a href="https://sunnah.com" target="_blank">Sunnah.com</a>
-            </div>
-            <div id="seerah-section">
-                <h3>السيرة النبوية</h3>
-                <p>Learn about the life of Prophet Muhammad (PBUH).</p>
-                <a href="https://sira.open-source.example.com" target="_blank">Open Source Seerah</a>
-            </div>
-            <div id="fiqh-section">
-                <h3>الفقه</h3>
-                <p>Understand Islamic jurisprudence and rulings.</p>
-                <a href="https://www.al-islam.org" target="_blank">Al-Islam.org</a>
-            </div>
-        </section>
-        <section id="login-christianity">
-            <h2>Login - Christianity</h2>
-            <p>Access resources and teachings related to Christianity.</p>
-            <div id="christian-denominations">
-                <h3>Christian Denominations</h3>
-                <ul>
-                    <li>
-                        <h4>Catholic</h4>
-                        <p>The Catholic Church is the largest Christian church, emphasizing tradition and the sacraments.</p>
-                        <a href="https://catholic.open-source.example.com" target="_blank">Catholic Open Source</a>
-                    </li>
-                    <li>
-                        <h4>Orthodox</h4>
-                        <p>The Orthodox Church focuses on preserving the original teachings and liturgical traditions of Christianity.</p>
-                        <a href="https://orthodox.open-source.example.com" target="_blank">Orthodox Open Source</a>
-                    </li>
-                    <li>
-                        <h4>Protestant</h4>
-                        <p>Protestantism includes various denominations emphasizing scripture and individual faith.</p>
-                        <a href="https://protestant.open-source.example.com" target="_blank">Protestant Open Source</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="bible-sections">
-                <h3>Bible Sections</h3>
-                <ul>
-                    <li>
-                        <h4>Genesis</h4>
-                        <p>Explore the Book of Genesis with open-source resources.</p>
-                        <a href="https://opensource-genesis-bible.example.com" target="_blank">Open Genesis Bible</a>
-                    </li>
-                    <li>
-                        <h4>Exodus</h4>
-                        <p>Explore the Book of Exodus with open-source resources.</p>
-                        <a href="https://opensource-exodus-bible.example.com" target="_blank">Open Exodus Bible</a>
-                    </li>
-                    <li>
-                        <h4>Leviticus</h4>
-                        <p>Explore the Book of Leviticus with open-source resources.</p>
-                        <a href="https://opensource-leviticus-bible.example.com" target="_blank">Open Leviticus Bible</a>
-                    </li>
-                    <li>
-                        <h4>Numbers</h4>
-                        <p>Explore the Book of Numbers with open-source resources.</p>
-                        <a href="https://opensource-numbers-bible.example.com" target="_blank">Open Numbers Bible</a>
-                    </li>
-                    <li>
-                        <h4>Deuteronomy</h4>
-                        <p>Explore the Book of Deuteronomy with open-source resources.</p>
-                        <a href="https://opensource-deuteronomy-bible.example.com" target="_blank">Open Deuteronomy Bible</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="login-judaism">
-            <h2>Login - Judaism</h2>
-            <p>Access resources and teachings related to Judaism.</p>
-            <div id="torah-sections">
-                <h3>Torah Sections</h3>
-                <ul>
-                    <li>
-                        <h4>Genesis</h4>
-                        <p>Explore the Book of Genesis with open-source resources.</p>
-                        <a href="https://opensource-genesis-library.example.com" target="_blank">Open Genesis Library</a>
-                    </li>
-                    <li>
-                        <h4>Exodus</h4>
-                        <p>Explore the Book of Exodus with open-source resources.</p>
-                        <a href="https://opensource-exodus-library.example.com" target="_blank">Open Exodus Library</a>
-                    </li>
-                    <li>
-                        <h4>Leviticus</h4>
-                        <p>Explore the Book of Leviticus with open-source resources.</p>
-                        <a href="https://opensource-leviticus-library.example.com" target="_blank">Open Leviticus Library</a>
-                    </li>
-                    <li>
-                        <h4>Numbers</h4>
-                        <p>Explore the Book of Numbers with open-source resources.</p>
-                        <a href="https://opensource-numbers-library.example.com" target="_blank">Open Numbers Library</a>
-                    </li>
-                    <li>
-                        <h4>Deuteronomy</h4>
-                        <p>Explore the Book of Deuteronomy with open-source resources.</p>
-                        <a href="https://opensource-deuteronomy-library.example.com" target="_blank">Open Deuteronomy Library</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="jewish-denominations">
-                <h3>Jewish Denominations</h3>
-                <ul>
-                    <li>
-                        <h4>Orthodox Judaism</h4>
-                        <p>Explore Orthodox Jewish teachings and resources.</p>
-                        <a href="https://orthodox-jewish.open-source.example.com" target="_blank">Orthodox Jewish Open Source</a>
-                    </li>
-                    <li>
-                        <h4>Reform Judaism</h4>
-                        <p>Explore Reform Jewish teachings and resources.</p>
-                        <a href="https://reform-jewish.open-source.example.com" target="_blank">Reform Jewish Open Source</a>
-                    </li>
-                    <li>
-                        <h4>Conservative Judaism</h4>
-                        <p>Explore Conservative Jewish teachings and resources.</p>
-                        <a href="https://conservative-jewish.open-source.example.com" target="_blank">Conservative Jewish Open Source</a>
-                    </li>
-                </ul>
-            </div>
-            <button id="activate-judaism-sections">Activate Judaism Sections</button>
-        </section>
-        <section id="judaism-section">
-            <h2>الديانة اليهودية</h2>
-            <p>تعرف على المزيد حول التقاليد اليهودية والتقويم اليهودي.</p>
-            <div id="jewish-calendar"></div>
         </section>
         <section id="about">
             <h2>About the Platform</h2>
@@ -323,32 +188,32 @@
             <p>Explore religious texts and educational materials in multiple languages.</p>
         </section>
         <section id="blogs">
-            <h2>المدونات</h2>
-            <p>اكتشف مقالات ومدونات حول الأديان والثقافات المختلفة.</p>
-            <a class="section-button" href="blogs.html">استكشاف المدونات</a>
+            <h2>Blogs</h2>
+            <p>Discover articles and blogs about different religions and cultures.</p>
+            <a class="section-button" href="blogs.html">Explore Blogs</a>
         </section>
         <section id="debates">
-            <h2>المناظرات الدينية</h2>
-            <p>اختر نوع النشاط الذي ترغب في المشاركة فيه:</p>
+            <h2>Religious Debates</h2>
+            <p>Select the type of activity you want to participate in:</p>
             <div class="debate-options">
-                <button id="education-button">تعليم</button>
-                <button id="memorization-button">تحفيظ</button>
-                <button id="chat-button">دردشات</button>
-                <button id="schedule-meeting-button">نظام اجتماعات</button>
+                <button id="education-button">Education</button>
+                <button id="memorization-button">Memorization</button>
+                <button id="chat-button">Chats</button>
+                <button id="schedule-meeting-button">Meeting System</button>
             </div>
             <div id="meeting-scheduler" style="display: none;">
-                <h3>جدولة اجتماع</h3>
+                <h3>Schedule a Meeting</h3>
                 <form id="meeting-form">
-                    <label for="meeting-date">التاريخ:</label>
+                    <label for="meeting-date">Date:</label>
                     <input type="date" id="meeting-date" required>
-                    <label for="meeting-time">الوقت:</label>
+                    <label for="meeting-time">Time:</label>
                     <input type="time" id="meeting-time" required>
-                    <label for="meeting-type">نوع الاجتماع:</label>
+                    <label for="meeting-type">Meeting Type:</label>
                     <select id="meeting-type" required>
-                        <option value="debate">مناظرة</option>
-                        <option value="education">تعليم</option>
+                        <option value="debate">Debate</option>
+                        <option value="education">Education</option>
                     </select>
-                    <button type="submit">جدولة</button>
+                    <button type="submit">Schedule</button>
                 </form>
             </div>
         </section>
@@ -364,24 +229,24 @@
             </div>
         </section>
         <section id="admin-dashboard">
-            <h2>لوحة التحكم</h2>
-            <p>إدارة الموقع، مراجعة طلبات التطوع، وتسجيل المستخدمين.</p>
+            <h2>Admin Dashboard</h2>
+            <p>Manage the website, review volunteer requests, and register users.</p>
             <div class="dashboard-actions">
-                <button id="view-volunteer-requests">عرض طلبات التطوع</button>
-                <button id="manage-users">إدارة المستخدمين</button>
+                <button id="view-volunteer-requests">View Volunteer Requests</button>
+                <button id="manage-users">Manage Users</button>
             </div>
             <div id="volunteer-requests" style="display: none;">
-                <h3>طلبات التطوع</h3>
+                <h3>Volunteer Requests</h3>
                 <ul id="requests-list">
-                    <!-- سيتم ملء الطلبات ديناميكيًا -->
+                    <!-- Requests will be dynamically populated -->
                 </ul>
             </div>
             <div id="user-registration">
-                <h3>تسجيل مستخدم جديد</h3>
+                <h3>Register a New User</h3>
                 <form id="registration-form">
-                    <input type="email" placeholder="البريد الإلكتروني" required>
-                    <input type="text" placeholder="اسم المستخدم" required>
-                    <button type="submit">تسجيل</button>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Username" required>
+                    <button type="submit">Register</button>
                 </form>
             </div>
         </section>
@@ -399,11 +264,21 @@
     </footer>
     <script>
         document.getElementById('activate-judaism-sections').addEventListener('click', () => {
-            alert('Judaism sections activated and linked to external libraries!');
-            // Example of linking external libraries
+            alert('Judaism sections activated and linked to reliable resources!');
+            const today = new Date();
+            document.getElementById('jewish-calendar').innerText = `Today's Gregorian Date: ${today.toDateString()}`;
+        });
+
+        document.getElementById('login-christianity').addEventListener('click', () => {
+            alert('Christianity sections activated and linked to external libraries!');
             const script = document.createElement('script');
-            script.src = 'https://example.com/judaism-library.js';
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/bible-api/1.0.0/bible.min.js'; // مكتبة مجانية
             document.body.appendChild(script);
+            script.onload = () => {
+                const bible = new Bible();
+                const verse = bible.getVerse('John 3:16');
+                alert(`Example Verse: ${verse.text}`);
+            };
         });
 
         // Example: Add interactivity for debates
