@@ -92,7 +92,7 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            background: linear-gradient(90deg, #8e44ad, #3498db); /* زخارف إيمانية */
             color: white;
             text-align: center;
             padding: 25px 0;
@@ -102,12 +102,12 @@
         footer .social-icons a {
             color: white;
             margin: 0 10px;
-            font-size: 1.5em;
+            font-size: 1.8em; /* تكبير الأيقونات */
             transition: transform 0.3s, color 0.3s;
         }
         footer .social-icons a:hover {
-            color: #ffeb3b;
-            transform: scale(1.2);
+            color: #f1c40f; /* لون زاهي */
+            transform: scale(1.3); /* تكبير عند التمرير */
         }
         .section {
             margin-bottom: 30px;
@@ -164,10 +164,26 @@
                 <button>Login</button>
             </div>
         </section>
+        <section id="register">
+            <div class="login-form">
+                <h2>Register</h2>
+                <form id="registration-form">
+                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </section>
         <section id="islam" class="section islam">
             <h2>Islam</h2>
             <p>Information about Islam.</p>
-            <a class="section-button" href="https://quran.com" target="_blank">Explore Quran</a>
+            <div class="islam-sections">
+                <a class="section-button" href="https://quran.com" target="_blank">Explore Quran</a>
+                <a class="section-button" href="https://sunnah.com" target="_blank">Explore Hadith</a>
+                <a class="section-button" href="https://www.seerah.net" target="_blank">Explore Seerah</a>
+                <a class="section-button" href="https://www.al-islam.org/fiqh" target="_blank">Explore Fiqh</a>
+            </div>
         </section>
         <section id="christianity" class="section christianity">
             <h2>Christianity</h2>
@@ -191,6 +207,14 @@
             <h2>Blogs</h2>
             <p>Discover articles and blogs about different religions and cultures.</p>
             <a class="section-button" href="blogs.html">Explore Blogs</a>
+            <div id="write-blog">
+                <h3>Write a Blog</h3>
+                <form id="blog-form">
+                    <input type="text" id="blog-title" placeholder="Blog Title" required>
+                    <textarea id="blog-content" placeholder="Write your blog here..." rows="5" required></textarea>
+                    <button type="submit">Submit Blog</button>
+                </form>
+            </div>
         </section>
         <section id="debates">
             <h2>Religious Debates</h2>
@@ -228,27 +252,11 @@
                 <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </section>
-        <section id="admin-dashboard">
+        <section id="admin-dashboard" style="display: none;">
             <h2>Admin Dashboard</h2>
-            <p>Manage the website, review volunteer requests, and register users.</p>
-            <div class="dashboard-actions">
-                <button id="view-volunteer-requests">View Volunteer Requests</button>
-                <button id="manage-users">Manage Users</button>
-            </div>
-            <div id="volunteer-requests" style="display: none;">
-                <h3>Volunteer Requests</h3>
-                <ul id="requests-list">
-                    <!-- Requests will be dynamically populated -->
-                </ul>
-            </div>
-            <div id="user-registration">
-                <h3>Register a New User</h3>
-                <form id="registration-form">
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Username" required>
-                    <button type="submit">Register</button>
-                </form>
-            </div>
+            <ul id="user-list">
+                <!-- المستخدمون الجدد سيتم إضافتهم هنا -->
+            </ul>
         </section>
     </main>
     <footer>
@@ -260,7 +268,7 @@
             <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
             <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="text-align: center; font-size: 1.5em; font-weight: bold; color: #ffeb3b;">🌍 ONE WORLD 🌎</p>
+        <p style="text-align: center; font-size: 1.5em; font-weight: bold; color: #f1c40f;">🌍 ONE WORLD 🌎</p>
     </footer>
     <script>
         document.getElementById('activate-judaism-sections').addEventListener('click', () => {
@@ -317,6 +325,141 @@
             alert(`تم جدولة اجتماع ${type} في ${date} الساعة ${time}`);
             // إرسال البيانات إلى الخادم
         });
+
+        // تفعيل رابط المدونات
+        document.querySelector('.section-button[href="blogs.html"]').addEventListener('click', () => {
+            alert('Redirecting to blogs section...');
+            window.location.href = 'blogs.html';
+        });
+
+        // تفعيل رابط الدردشة
+        document.getElementById('chat-button').addEventListener('click', () => {
+            alert('Redirecting to chat section...');
+            window.location.href = 'chat.html';
+        });
+
+        // تفعيل رابط الاجتماعات
+        document.getElementById('schedule-meeting-button').addEventListener('click', () => {
+            const scheduler = document.getElementById('meeting-scheduler');
+            scheduler.style.display = scheduler.style.display === 'none' ? 'block' : 'none';
+            alert('تم تفعيل رابط الاجتماعات بنجاح!');
+        });
+
+        document.querySelector('.section-button[href="debates.html"]').addEventListener('click', () => {
+            alert('تم تفعيل رابط المناظرات بنجاح!');
+            window.location.href = 'debates.html';
+        });
+
+        document.querySelector('.section-button[href="blogs.html"]').addEventListener('click', () => {
+            alert('تم تفعيل رابط المدونات بنجاح!');
+            window.location.href = 'blogs.html';
+        });
+
+        document.getElementById('chat-button').addEventListener('click', () => {
+            alert('تم تفعيل رابط الدردشة بنجاح!');
+            window.location.href = 'chat.html';
+        });
+
+        document.getElementById('schedule-meeting-button').addEventListener('click', () => {
+            const scheduler = document.getElementById('meeting-scheduler');
+            scheduler.style.display = scheduler.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('meeting-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const date = document.getElementById('meeting-date').value;
+            const time = document.getElementById('meeting-time').value;
+            const type = document.getElementById('meeting-type').value;
+            alert(`تم جدولة اجتماع ${type} في ${date} الساعة ${time}`);
+            // إرسال البيانات إلى الخادم
+        });
+
+        // تفعيل رابط المناظرات
+        document.querySelector('.section-button[href="debates.html"]').addEventListener('click', () => {
+            alert('Redirecting to debates section...');
+            window.location.href = 'debates.html';
+        });
+
+        document.getElementById('blog-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('blog-title').value;
+            const content = document.getElementById('blog-content').value;
+            alert(`Blog Submitted!\nTitle: ${title}\nContent: ${content}`);
+            // إرسال البيانات إلى الخادم
+        });
+
+        // محاكاة حالة تسجيل الدخول (يمكن استبدالها بمنطق حقيقي)
+        const isLoggedIn = false; // قم بتغيير هذه القيمة بناءً على حالة المستخدم
+
+        // وظيفة لإعادة التوجيه بناءً على حالة تسجيل الدخول
+        function redirectToPageOrLogin(targetPage) {
+            if (isLoggedIn) {
+                window.location.href = targetPage;
+            } else {
+                alert('You need to log in first!');
+                window.location.href = '#login'; // توجيه إلى قسم تسجيل الدخول
+            }
+        }
+
+        // تعديل الروابط لتفعيل التوجيه
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = link.getAttribute('href');
+                redirectToPageOrLogin(targetPage);
+            });
+        });
+
+        // تعديل أزرار الأقسام
+        document.querySelectorAll('.section-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = button.getAttribute('href');
+                redirectToPageOrLogin(targetPage);
+            });
+        });
+
+        // تعديل أزرار خاصة (مثل الدردشة والاجتماعات)
+        document.getElementById('chat-button').addEventListener('click', () => {
+            redirectToPageOrLogin('chat.html');
+        });
+
+        document.getElementById('schedule-meeting-button').addEventListener('click', () => {
+            redirectToPageOrLogin('meeting.html');
+        });
+
+        document.getElementById('registration-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+
+            // عرض رسالة تأكيد
+            alert(`User Registered!\nUsername: ${username}\nEmail: ${email}`);
+
+            // إرسال البيانات إلى الخادم (محاكاة)
+            const newUser = { username, email, password };
+            console.log('New User:', newUser);
+
+            // تحديث لوحة التحكم (محاكاة)
+            const adminDashboard = document.getElementById('admin-dashboard');
+            if (adminDashboard) {
+                const userList = adminDashboard.querySelector('#user-list');
+                if (userList) {
+                    const newUserEntry = document.createElement('li');
+                    newUserEntry.textContent = `Username: ${username}, Email: ${email}`;
+                    userList.appendChild(newUserEntry);
+                }
+            }
+        });
+
+        // إضافة زر لتوجيه المستخدم إلى صفحة التسجيل
+        const registerButton = document.createElement('button');
+        registerButton.textContent = 'Register';
+        registerButton.addEventListener('click', () => {
+            window.location.href = '#register';
+        });
+        document.body.appendChild(registerButton);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hebcal/2.0.1/hebcal.min.js"></script>
     <script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #444;
+        }
+        header {
+            background: linear-gradient(90deg, #8e44ad, #3498db);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .dashboard-actions {
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .dashboard-actions button {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .dashboard-actions button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .dashboard-section {
+            display: none;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <div class="dashboard-actions">
+            <button id="view-volunteer-requests">View Volunteer Requests</button>
+            <button id="manage-users">Manage Users</button>
+        </div>
+        <div id="volunteer-requests" class="dashboard-section">
+            <h3>Volunteer Requests</h3>
+            <ul id="requests-list">
+                <!-- Requests will be dynamically populated -->
+            </ul>
+        </div>
+        <div id="user-registration" class="dashboard-section">
+            <h3>Register a New User</h3>
+            <form id="registration-form">
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Username" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        document.getElementById('view-volunteer-requests').addEventListener('click', () => {
+            const requestsSection = document.getElementById('volunteer-requests');
+            requestsSection.style.display = requestsSection.style.display === 'none' ? 'block' : 'none';
+            const requestsList = document.getElementById('requests-list');
+            requestsList.innerHTML = '<li>Request 1</li><li>Request 2</li>';
+        });
+
+        document.getElementById('registration-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const username = e.target.querySelector('input[type="text"]').value;
+            alert(`User Registered: ${username} (${email})`);
+        });
+    </script>
+</body>
+</html>
