@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities Contribution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Contribute to Activities</h1>
+        <p class="text-center">Organize or participate in activities that promote harmony and understanding.</p>
+        <form id="activities-form" class="mt-4">
+            <div class="mb-3">
+                <label for="activity-name" class="form-label">Activity Name</label>
+                <input type="text" class="form-control" id="activity-name" placeholder="Enter activity name" required>
+            </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">Details</label>
+                <textarea class="form-control" id="details" rows="4" placeholder="Provide details about the activity" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('activities-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Activity details submitted successfully!');
+        });
+    </script>
+</body>
+</html>

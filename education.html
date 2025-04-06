@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Contribution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Contribute to Education</h1>
+        <p class="text-center">Share your knowledge by creating educational content or mentoring others.</p>
+        <form id="education-form" class="mt-4">
+            <div class="mb-3">
+                <label for="topic" class="form-label">Topic</label>
+                <input type="text" class="form-control" id="topic" placeholder="Enter topic" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" rows="4" placeholder="Describe your contribution" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('education-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your contribution!');
+        });
+    </script>
+</body>
+</html>

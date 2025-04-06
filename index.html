@@ -206,7 +206,7 @@
         <section id="blogs">
             <h2>Blogs</h2>
             <p>Discover articles and blogs about different religions and cultures.</p>
-            <a class="section-button" href="blogs.html">Explore Blogs</a>
+            <a class="section-button" href="#write-blog">Write a Blog</a>
             <div id="write-blog">
                 <h3>Write a Blog</h3>
                 <form id="blog-form">
@@ -214,6 +214,12 @@
                     <textarea id="blog-content" placeholder="Write your blog here..." rows="5" required></textarea>
                     <button type="submit">Submit Blog</button>
                 </form>
+            </div>
+            <div id="blog-list">
+                <h3>Submitted Blogs</h3>
+                <ul id="blogs-container">
+                    <!-- المدونات المحفوظة ستظهر هنا -->
+                </ul>
             </div>
         </section>
         <section id="debates">
@@ -258,6 +264,15 @@
                 <!-- المستخدمون الجدد سيتم إضافتهم هنا -->
             </ul>
         </section>
+        <section id="global-contribution">
+            <h2>Global Contribution</h2>
+            <p>Join our mission to educate, preserve, and share knowledge globally. Choose how you want to contribute:</p>
+            <div class="contribution-options">
+                <a class="section-button" href="education.html" target="_blank">Education</a>
+                <a class="section-button" href="memorization.html" target="_blank">Memorization</a>
+                <a class="section-button" href="activities.html" target="_blank">Activities</a>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2023 Religious Education Platform. All rights reserved.</p>
@@ -269,6 +284,17 @@
             <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
         <p style="text-align: center; font-size: 1.5em; font-weight: bold; color: #f1c40f;">🌍 ONE WORLD 🌎</p>
+        <section id="auth-section" style="background: #2c2c2c; color: #f5f5f5; padding: 30px; border-top: 5px solid #4b2e2e;">
+            <h2 style="text-align: center; color: #d4a373;">Login or Register</h2>
+            <div class="login-form" style="background: #3e3e3e; border: 1px solid #4b2e2e;">
+                <form id="auth-form">
+                    <input type="text" id="auth-username" placeholder="Username" required style="background: #4b4b4b; color: #f5f5f5;">
+                    <input type="email" id="auth-email" placeholder="Email (for registration)" style="background: #4b4b4b; color: #f5f5f5;">
+                    <input type="password" id="auth-password" placeholder="Password" required style="background: #4b4b4b; color: #f5f5f5;">
+                    <button type="submit" style="background: linear-gradient(90deg, #4b2e2e, #6b4e4e); color: #f5f5f5;">Submit</button>
+                </form>
+            </div>
+        </section>
     </footer>
     <script>
         document.getElementById('activate-judaism-sections').addEventListener('click', () => {
@@ -384,8 +410,19 @@
             e.preventDefault();
             const title = document.getElementById('blog-title').value;
             const content = document.getElementById('blog-content').value;
-            alert(`Blog Submitted!\nTitle: ${title}\nContent: ${content}`);
-            // إرسال البيانات إلى الخادم
+
+            // إنشاء عنصر جديد للمدونة
+            const blogEntry = document.createElement('li');
+            blogEntry.innerHTML = `<h4>${title}</h4><p>${content}</p>`;
+            
+            // إضافة المدونة إلى قائمة المدونات
+            document.getElementById('blogs-container').appendChild(blogEntry);
+
+            // إعادة تعيين الحقول
+            document.getElementById('blog-title').value = '';
+            document.getElementById('blog-content').value = '';
+
+            alert('Blog saved successfully!');
         });
 
         // محاكاة حالة تسجيل الدخول (يمكن استبدالها بمنطق حقيقي)
@@ -460,6 +497,19 @@
             window.location.href = '#register';
         });
         document.body.appendChild(registerButton);
+
+        document.getElementById('auth-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('auth-username').value;
+            const email = document.getElementById('auth-email').value;
+            const password = document.getElementById('auth-password').value;
+
+            if (email) {
+                alert(`Registered Successfully!\nUsername: ${username}\nEmail: ${email}`);
+            } else {
+                alert(`Logged in Successfully!\nUsername: ${username}`);
+            }
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hebcal/2.0.1/hebcal.min.js"></script>
     <script>
@@ -467,5 +517,81 @@
         const today = new Hebcal.HDate();
         document.getElementById('jewish-calendar').innerText = `التاريخ اليهودي اليوم: ${today.toString()}`;
     </script>
+    <script>
+    // حالة تسجيل الدخول
+    let isLoggedIn = false;
+    let users = []; // قائمة المستخدمين المسجلين
+
+    // وظيفة لإعادة التوجيه بناءً على حالة تسجيل الدخول
+    function redirectToPageOrLogin(targetPage) {
+        if (isLoggedIn) {
+            window.location.href = targetPage;
+        } else {
+            alert('You need to log in first!');
+            window.location.href = '#login'; // توجيه إلى قسم تسجيل الدخول
+        }
+    }
+
+    // تعديل الروابط لتفعيل التوجيه
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetPage = link.getAttribute('href');
+            redirectToPageOrLogin(targetPage);
+        });
+    });
+
+    // تعديل أزرار الأقسام
+    document.querySelectorAll('.section-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetPage = button.getAttribute('href');
+            redirectToPageOrLogin(targetPage);
+        });
+    });
+
+    // تسجيل المستخدم
+    document.getElementById('registration-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.getElementById('register-username').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+
+        // إضافة المستخدم إلى القائمة
+        const newUser = { username, email, password };
+        users.push(newUser);
+
+        // تحديث لوحة التحكم
+        const userList = document.getElementById('user-list');
+        const newUserEntry = document.createElement('li');
+        newUserEntry.textContent = `Username: ${username}, Email: ${email}`;
+        userList.appendChild(newUserEntry);
+
+        alert(`User Registered!\nUsername: ${username}\nEmail: ${email}`);
+        isLoggedIn = true; // تسجيل الدخول تلقائيًا بعد التسجيل
+    });
+
+    // تسجيل الدخول
+    document.getElementById('login').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = document.querySelector('#login input[type="text"]').value;
+        const password = document.querySelector('#login input[type="password"]').value;
+
+        // التحقق من بيانات المستخدم
+        const user = users.find(u => u.username === username && u.password === password);
+        if (user) {
+            alert(`Welcome back, ${username}!`);
+            isLoggedIn = true;
+        } else {
+            alert('Invalid username or password!');
+        }
+    });
+
+    // عرض لوحة التحكم فقط للإدارة
+    const adminDashboard = document.getElementById('admin-dashboard');
+    if (adminDashboard) {
+        adminDashboard.style.display = 'block'; // عرض لوحة التحكم
+    }
+</script>
 </body>
 </html>
